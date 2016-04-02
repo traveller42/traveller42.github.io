@@ -20,7 +20,25 @@
 
 &lt;h1 id=&#34;building-a-portable-supercomputer:e35225681628e09bab23f7b8fd7299b1&#34;&gt;Building a Portable Supercomputer&lt;/h1&gt;
 
-&lt;p&gt;Or some topic appropriate to April 1st&lt;/p&gt;
+&lt;p&gt;While I am starting on April 1, this is actually something I am working on.&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo:e35225681628e09bab23f7b8fd7299b1&#34;&gt;Hugo&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m using &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to generate these pages.  This is actually
+the second site I&amp;rsquo;ve created using Hugo.  The first is a &lt;a href=&#34;http://traveller42.github.io/ogs-notifier/&#34;&gt;site&lt;/a&gt; for a Chrome
+Extension I support.&lt;/p&gt;
+
+&lt;p&gt;Once everything is in place, this is quick and easy to maintain.  However, there
+are many fiddly bits that need to accounted for before it all works as desired.&lt;/p&gt;
+
+&lt;h1 id=&#34;github:e35225681628e09bab23f7b8fd7299b1&#34;&gt;Github&lt;/h1&gt;
+
+&lt;p&gt;Since this site and the source used to create it are hosted on Github, part of
+getting everything working involved arranging and populating the proper repository
+in the correct manner.  I&amp;rsquo;ve got this working manually for now, but my next task
+will be to create a script to automate the deployment of the new pages.  Once that
+is stable, I intend to leverage a Continuous Integration tool to automagically
+generate and deploy the new pages when I push new source to the repository.&lt;/p&gt;
 </description>
     </item>
     
