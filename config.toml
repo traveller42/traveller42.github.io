@@ -13,7 +13,7 @@ theme = "blackburn"
 
 [params]
   subtitle = "better title coming soon"
-  dateFormat = "01 Apr 2016, 23:36"
+  dateFormat = "02 Jan 2006, 15:04"
 
 [menu]
   # Shown in the side menu.
