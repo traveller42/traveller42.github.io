@@ -12,9 +12,8 @@ topics = []
 cbwierda@gmail.com
 
 # Snail Mail
-```
-Clark B. Wierda
-PO Box 7857
-Ann Arbor, MI 48107
-United States
-```
+
+Clark B. Wierda  
+PO Box 7857  
+Ann Arbor, MI 48107  
+United States  
