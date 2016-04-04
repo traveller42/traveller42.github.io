@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on A Traveller in Space and Time</title>
+    <link>http://traveller42.github.io/topics/testing/</link>
+    <description>Recent content in Testing on A Traveller in Space and Time</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 03 Apr 2016 23:40:35 -0400</lastBuildDate>
+    <atom:link href="http://traveller42.github.io/topics/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo Root</title>
+      <link>http://traveller42.github.io/post/hugo-root/</link>
+      <pubDate>Sun, 03 Apr 2016 23:40:35 -0400</pubDate>
+      
+      <guid>http://traveller42.github.io/post/hugo-root/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; Hugo doesn&amp;rsquo;t do anything with a file that it hasn&amp;rsquo;t been told how to handle.&lt;/p&gt;
+
+&lt;p&gt;I host the source for this blog in a &lt;a href=&#34;https://github.com/traveller42/traveller42.github.io&#34;&gt;Github repository&lt;/a&gt;.  Github will place a
+notice suggesting a Readme if one doesn&amp;rsquo;t exist.  In general, this is a good idea.&lt;br /&gt;
+It let&amp;rsquo;s the developer describe what the code hosted in the repository is intended
+to do or support.  It can be used as initial documentation for a small project and
+a jumping-off point for a larger project.&lt;/p&gt;
+
+&lt;p&gt;I have now added such a file to the source branch of my blog repository.  The real
+reason for this is to test what will happen with files created in the source root.
+My next task is to create a deploy script.  Now, I know I can just leave it in the
+source root.  This helps to keep things simple.&lt;/p&gt;
+
+&lt;p&gt;This script won&amp;rsquo;t do much.  It is only a few steps and I have been doing them from
+memory since the first build.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
