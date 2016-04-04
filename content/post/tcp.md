@@ -2,8 +2,8 @@
 date = "2016-04-02T23:10:04-04:00"
 description = "teaching helps one learn"
 draft = false
-tags = ["tcp", "learning", "teaching", "TIL"]
-title = "It takes Three"
+tags = ["tcp", "learning", "teaching"]
+title = "It Takes Three"
 topics = ["Network"]
 
 +++
