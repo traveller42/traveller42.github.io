@@ -7,8 +7,50 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 03 Apr 2016 23:40:35 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 04 Apr 2016 23:59:59 -0400</lastBuildDate>
     <atom:link href="http://traveller42.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bad Ideas</title>
+      <link>http://traveller42.github.io/post/bad-ideas/</link>
+      <pubDate>Mon, 04 Apr 2016 23:59:59 -0400</pubDate>
+      
+      <guid>http://traveller42.github.io/post/bad-ideas/</guid>
+      <description>
+
+&lt;h2 id=&#34;bad-ideas:aec35b56d95e3a3d35159fa91aa48dfb&#34;&gt;Bad Ideas&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Trying to launch a two-years dormant VM on a current version of
+VirtualBox on a 7 year old computer that is definitely showing
+its age.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This was prompted by a change in policy by Code 42 Software, the
+owners of CrashPlan, a very good backup program and service.
+The new policy is to delete cloud repositories for computers that
+have not connected in over 6 months.  This is only an issue as I
+have a couple of Windows VMs that I keep for the rare times I need
+a Windows environment.  Each of these VMs has not been active in
+two years as I have had no need to run a program on Windows in that
+time.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, there are a couple resources that I would like to
+maintain that require Windows.  Therefore, I decided to launch one
+of the VMs and update the CrashPlan software and let it refresh the
+repository.  It has now been trying to launch the VM for almost an
+hour.  It has also effectively locked up the GUI for the old computer.&lt;/p&gt;
+
+&lt;p&gt;This is being composed on my Chromebook where I have duplicated the
+git repo for the site.  I should document the steps needed as someone
+may want to do it again some day.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to leave the poor system trying to run the VM.  Hopefully, I
+can either log into a shell, or get control back on the GUI enough to
+shutdown the VM.  I do have a good backup, so I could just move the
+data.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugo Root</title>
