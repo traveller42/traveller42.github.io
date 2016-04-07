@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How NOT to efficiently acquire all the items needed">
+  <meta name="description" content="My initial ideas on what to do with it now that I have it">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>Measure Twice &middot; A Traveller in Space and Time</title>
+  <title>What Do You Do With a Portable Supercomputer? &middot; A Traveller in Space and Time</title>
 
   
   
@@ -182,8 +182,8 @@
 
 
 <div class="header">
-  <h1>Measure Twice</h1>
-  <h2>How NOT to efficiently acquire all the items needed</h2>
+  <h1>What Do You Do With a Portable Supercomputer?</h1>
+  <h2>My initial ideas on what to do with it now that I have it</h2>
 </div>
 <div class="content">
 
@@ -191,7 +191,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Apr 2016, 23:57</time>
+    <time>06 Apr 2016, 23:59</time>
   </div>
 
   
@@ -202,7 +202,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="http://traveller42.github.io/topics/planning">Planning</a>
+      <a class="post-taxonomy-topic" href="http://traveller42.github.io/topics/ideas">Ideas</a>
     
   </div>
   
@@ -214,11 +214,15 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/oops">oops</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/planing">planing</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/portable-supercomputer">portable supercomputer</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/hadoop">hadoop</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/process">process</a>
+      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/parallel-computer">parallel computer</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/distributed-computing">distributed computing</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/raspberry-pi">raspberry pi</a>
     
   </div>
   
@@ -226,28 +230,71 @@
 
 </div>
 
-  
+  <p>While I wait for the replacement cables, I can spend some time
+thinking about what I will actually do with this portable
+supercomputer once I have it up and running.</p>
 
-<h2 id="measure-twice-cut-order-once:d8b76d1b66f429937aec64249c3d9e10">Measure Twice; <del>Cut</del> Order Once</h2>
+<p>To start, the portable supercomputer is a cluster of 4 nodes in a
+single, small frame with integrated power and internal network.
+Each node of this cluster is a Raspberry Pi 3 B, so calling it a
+supercomputer is a bit of a stretch.  The important thing is that
+each of these systems has separate memory and storage.  All nodes
+are connected together with a network switch.  The head node will
+use it internal wifi or a USB network adapter for connections with
+external systems.  The only required physical connection will be
+power.</p>
 
-<p>While assembling my portable supercomputer, I discovered that the cables I
-had ordered were too short.  I had neglected to allow for the strain-reliefs
-at each end and the need to not stress the sockets these cables are plugged
-into.  I should have used the longer cables I have to determine the length I
-needed before ordering all the cables for the project.</p>
+<p>My first idea was to create a distributed build environment.
+There used to be a distributed make that would spread the work out
+over multiple cooperating systems.  This seems to have
+disappeared.  Another take on this was some kind of single system
+image configuration.  There was a system called Amoeba that
+managed processes over multiple compute resources, but there has
+been no recent work on it.  There are a few systems that appear to
+be similar, but they are only supported on x86 architecture CPUs.
+In this space is Plan 9 from Bell Labs.  There is a port of Plan 9
+to the RPi environment.  It is currently 32-bit and not really
+single system image, but it is interesting, designed for a
+distributed computing environment, and light weight.  Plan 9 is
+definitely worth considering as a path of investigation using this
+cluster.</p>
+
+<p>Another possibility is to create a Hadoop cluster.  This is an
+important framework in the big data space and learning more about
+it will be beneficial.  There are walk-throughs and tutorials for
+the RPi environment, so the initial cycle could be quite easy. I
+may do this as it has such a low bar to entry.  Next steps would
+depend on what I want to do and if a Hadoop environment is the
+appropriate place to do it.  Just adding another tool for the
+toolkit is good enough.</p>
+
+<p>Finally, I&rsquo;m considering doing something like a Beowulf cluser.
+The task in this case would be to investigate parallel
+programming.  A tool for this investigation would be to see how to
+distribute the simulations used in the Go (game) program I wrote
+Go (language) across the cluster.  Learning what contributes to
+any improvement and what blocks improvement would be the purpose
+here.  As a systems guy, I would want to know how I can tell what
+my limiting resource is.  Am I constrained by the limited
+compute power, the lack of memory, or the slow network?  What is
+the improvement curve.  How linear, or not, is it?</p>
+
+<p>Regardless of which of these, if any, I work on, I plan to see if
+I cannot make a 64-bit ARM version of a current Linux kernel run
+on this hardware.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="http://traveller42.github.io/post/bad-ideas/"><i class="fa fa-chevron-left"></i></a>
+    <a href="http://traveller42.github.io/post/measure-twice/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="http://traveller42.github.io/post/bad-ideas/">Bad Ideas</a>
+      <a href="http://traveller42.github.io/post/measure-twice/">Measure Twice</a>
     </nav>
     
   </div>
@@ -256,14 +303,8 @@ needed before ordering all the cables for the project.</p>
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="http://traveller42.github.io/post/what-do-you-do-with-a-portable-supercomputer/">What Do You Do With a Portable Supercomputer?</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="http://traveller42.github.io/post/what-do-you-do-with-a-portable-supercomputer/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
