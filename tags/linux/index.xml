@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Planning on A Traveller in Space and Time</title>
-    <link>http://traveller42.github.io/topics/planning/</link>
-    <description>Recent content in Planning on A Traveller in Space and Time</description>
+    <title>Linux on A Traveller in Space and Time</title>
+    <link>http://traveller42.github.io/tags/linux/</link>
+    <description>Recent content in Linux on A Traveller in Space and Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Thu, 07 Apr 2016 21:38:03 -0400</lastBuildDate>
-    <atom:link href="http://traveller42.github.io/topics/planning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://traveller42.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>What Image to Start With</title>
@@ -65,24 +65,6 @@ as a basis.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve downloaded each of the images available.  I will create a boot image for
 each and see what that looks like.  I will use that review to guide where I go
 next.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Measure Twice</title>
-      <link>http://traveller42.github.io/post/measure-twice/</link>
-      <pubDate>Tue, 05 Apr 2016 23:57:24 -0400</pubDate>
-      
-      <guid>http://traveller42.github.io/post/measure-twice/</guid>
-      <description>
-
-&lt;h1 id=&#34;measure-twice-cut-order-once:d8b76d1b66f429937aec64249c3d9e10&#34;&gt;Measure Twice; &lt;del&gt;Cut&lt;/del&gt; Order Once&lt;/h1&gt;
-
-&lt;p&gt;While assembling my portable supercomputer, I discovered that the cables I
-had ordered were too short.  I had neglected to allow for the strain-reliefs
-at each end and the need to not stress the sockets these cables are plugged
-into.  I should have used the longer cables I have to determine the length I
-needed before ordering all the cables for the project.&lt;/p&gt;
 </description>
     </item>
     
