@@ -8,7 +8,7 @@ topics = ["Planning"]
 
 +++
 
-## Measure Twice; ~~Cut~~ Order Once
+# Measure Twice; ~~Cut~~ Order Once
 
 While assembling my portable supercomputer, I discovered that the cables I
 had ordered were too short.  I had neglected to allow for the strain-reliefs
