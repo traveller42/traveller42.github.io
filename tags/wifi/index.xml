@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Network on A Traveller in Space and Time</title>
-    <link>http://traveller42.github.io/topics/network/</link>
-    <description>Recent content in Network on A Traveller in Space and Time</description>
+    <title>Wifi on A Traveller in Space and Time</title>
+    <link>http://traveller42.github.io/tags/wifi/</link>
+    <description>Recent content in Wifi on A Traveller in Space and Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Fri, 08 Apr 2016 20:28:38 -0400</lastBuildDate>
-    <atom:link href="http://traveller42.github.io/topics/network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://traveller42.github.io/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Connectivity</title>
@@ -82,62 +82,6 @@ computer,&lt;/p&gt;
 million bits per second in the last 30 years.  Wireless data wasn&amp;rsquo;t widely
 available until well into the 90s and we now have wireless speeds over a
 million bits per second.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>It Takes Three</title>
-      <link>http://traveller42.github.io/post/tcp/</link>
-      <pubDate>Sat, 02 Apr 2016 23:10:04 -0400</pubDate>
-      
-      <guid>http://traveller42.github.io/post/tcp/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve always heard that the best way to really understand something is to explain
-it to someone else.  Today, I learned a related truth:  &lt;em&gt;Trying&lt;/em&gt; to explain something
-to another is a good way to find out what you &lt;em&gt;do not&lt;/em&gt; know.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been dealing with data communications for pretty much my entire professional
-career.  I understand how a signal travels along a wire, and have used this to find
-where that wire is broken.  I have tapped serial lines for gather data in parallel
-with the primary system.  I once was able to get an ancient mainframe and a PC to
-communicate when much more experienced consultants had declared it wasn&amp;rsquo;t possible.
-I&amp;rsquo;ve deployed, monitored, analyzed IP networks.  I&amp;rsquo;ve written programs that operated
-at all levels of the stack.  If asked, I would have said I had a firm grasp of the
-low-level operation of the Transmission Control Protocol (TCP).&lt;/p&gt;
-
-&lt;p&gt;Today was the first time I had tried to explain the initiation of a TCP connection.
-I knew it used a three-way handshake.  I could recognized the handshake when looking
-at a packet trace.  I just never thought about it.  I knew it could break.  I knew the
-effects of a break, deliberate or otherwise.  I&amp;rsquo;ve always had this part handled by
-a library call, so I never had to implement it myself.  It just worked, or it didn&amp;rsquo;t.
-I could handle either case in my code.  I never had to work with the steps in
-isolation.&lt;/p&gt;
-
-&lt;p&gt;I was asked about the details of the initiation of a TCP connection by another
-computer programmer with experience with using networks, but not with network programming.
-I got several things wrong and created much confusion before actually getting the
-gist of the process explained and the knowledge successfully imparted.&lt;/p&gt;
-
-&lt;p&gt;Since I was reviewing packet traces today, I had plenty of opportunity to look at
-the process as implemented.&lt;/p&gt;
-
-&lt;p&gt;[If you truly have a solid understanding of the three-way handshake, you can stop
-reading now.]&lt;/p&gt;
-
-&lt;p&gt;The TCP Three-way handshake
-1. SYN from client
-2. SYN-ACK from Server
-3. ACK from client&lt;/p&gt;
-
-&lt;p&gt;The SYN flag is set to indicate that the packet includes the starting sequence number
-from the client.  The SYN-ACK acknowledges the receipt of the previous packet and
-includes the starting sequence number from the server.  The client then sends an ACK to
-indicate that it has received the packet.  From this point on, all packets between
-the client and the server should have the ACK flag set.&lt;/p&gt;
-
-&lt;p&gt;The Wikipedia &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_Control_Protocol&#34;&gt;page on TCP&lt;/a&gt;
-, as usual, has more detail than most of us will ever need on TCP and the details of
-the three-way handshake to start the connection and the &lt;strong&gt;four-way&lt;/strong&gt; handshake for tearing
-down the connection.&lt;/p&gt;
 </description>
     </item>
     
