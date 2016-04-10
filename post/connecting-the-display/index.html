@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Have to connect first">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>Oops &middot; A Traveller in Space and Time</title>
+  <title>Connecting the Display &middot; A Traveller in Space and Time</title>
 
   
   
@@ -182,16 +182,12 @@
 
 
 <div class="header">
-  <h1>Oops</h1>
+  <h1>Connecting the Display</h1>
+  <h2>Have to connect first</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="http://traveller42.github.io/post/connecting-the-display/">Connecting the Display</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -230,134 +226,68 @@
 
 </div>
 
-  </header>
+  <p>Not much progress today.  The LCD I am using for the display on the head unit
+requires a mini USB connector.  I only have micro USB connectors right now.
+Getting the initial connection with the new LCD display will have to wait.</p>
 
-  <p>
-  Not much progress today. The LCD I am using for the display on the head unit requires a mini USB connector. I only have micro USB connectors right now. Getting the initial connection with the new LCD display will have to wait. The USB connector for the ezLCD display I am using provides power, control, and access to storage for fonts and images directly in the display. There is another connector that can be used using direct serial access.
-  </p>
+<p>The USB connector for the ezLCD display I am using provides power, control, and
+access to storage for fonts and images directly in the display.</p>
 
-  
-  <footer>
-    <a href="http://traveller42.github.io/post/connecting-the-display/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<p>There is another connector that can be used using direct serial access.  This
+connector can also provide power.  It uses a specific connector and provides
+many other capabilities, but this will require custom programming to leverage.</p>
 
-  
-    <article>
-  <header>
-    <h2><a href="http://traveller42.github.io/post/measure-twice/">Measure Twice</a></h2>
+<p>Current plan is to use USB.  I will also create a library to make interfacing
+with the display easier.</p>
 
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Apr 2016, 23:57</time>
-  </div>
 
   
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-topic" href="http://traveller42.github.io/topics/planning">Planning</a>
+    <a href="http://traveller42.github.io/post/connectivity/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/oops">oops</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/portable-supercomputer">portable supercomputer</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/process">process</a>
+    <nav class="prev">
+      <a href="http://traveller42.github.io/post/connectivity/">Connectivity</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  Measure Twice; Cut Order Once While assembling my portable supercomputer, I discovered that the cables I had ordered were too short. I had neglected to allow for the strain-reliefs at each end and the need to not stress the sockets these cables are plugged into. I should have used the longer cables I have to determine the length I needed before ordering all the cables for the project.
-  </p>
 
   
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-  
-    <article>
-  <header>
-    <h2><a href="http://traveller42.github.io/post/bad-ideas/">Bad Ideas</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Apr 2016, 23:59</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+(function() {
     
-      <a class="post-taxonomy-topic" href="http://traveller42.github.io/topics/mistakes">Mistakes</a>
     
-  </div>
-  
-  
+    if (window.location.hostname == "localhost")
+        return;
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/old-computers">old computers</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/virtualbox">virtualbox</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/crashplan">crashplan</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/windows">windows</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://traveller42.github.io/tags/oops">oops</a>
-    
-  </div>
-  
-  
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'atraveller';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-</div>
 
-  </header>
-
-  <p>
-  Bad Ideas Trying to launch a two-years dormant VM on a current version of VirtualBox on a 7 year old computer that is definitely showing its age. This was prompted by a change in policy by Code 42 Software, the owners of CrashPlan, a very good backup program and service. The new policy is to delete cloud repositories for computers that have not connected in over 6 months. This is only an issue as I have a couple of Windows VMs that I keep for the rare times I need a Windows environment.
-  </p>
-
-  
-  <footer>
-    <a href="http://traveller42.github.io/post/bad-ideas/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
 </div>
 
 </div>
@@ -369,3 +299,4 @@
 
 </body>
 </html>
+
