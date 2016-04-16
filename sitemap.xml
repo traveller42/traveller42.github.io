@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://traveller42.github.io/</loc>
-    <lastmod>2016-04-10T21:06:13-04:00</lastmod>
+    <lastmod>2016-04-15T23:11:26-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://traveller42.github.io/post/unexpected-overhead-of-extra-threads/</loc>
+    <lastmod>2016-04-15T23:11:26-04:00</lastmod>
   </url>
   
   <url>

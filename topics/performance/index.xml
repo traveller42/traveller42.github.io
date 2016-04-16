@@ -7,8 +7,153 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 10 Apr 2016 21:06:13 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 15 Apr 2016 23:11:26 -0400</lastBuildDate>
     <atom:link href="http://traveller42.github.io/topics/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unexpected Overhead of Extra Threads</title>
+      <link>http://traveller42.github.io/post/unexpected-overhead-of-extra-threads/</link>
+      <pubDate>Fri, 15 Apr 2016 23:11:26 -0400</pubDate>
+      
+      <guid>http://traveller42.github.io/post/unexpected-overhead-of-extra-threads/</guid>
+      <description>&lt;p&gt;Earlier, I had mentioned that it appeared that the individual threads on the
+Chromebook seemed to be faster than the threads on the 8-core server running at
+a clock speed over 50% higher.  I&amp;rsquo;ve done the deeper look I suggested then, and
+I have found something interesting:  For the program I used (my Go playing
+program, michi-go), reducing the number of threads results in each thread doing
+more work.&lt;/p&gt;
+
+&lt;p&gt;Michi-go is written in the Go language.  This language has concurrency as a
+first-class concept.  Allowing concurrent routines to operate at the same time
+results in some parallelism.  This concurrency is present in michi-go even when
+the current process is conceptually &amp;ldquo;single-threaded&amp;rdquo;.  The search aspect of the
+program is explicitly written to be &amp;ldquo;multi-threaded&amp;rdquo;.  The two benchmarks in the
+code are &lt;strong&gt;mcbenchmark&lt;/strong&gt; and &lt;strong&gt;tsbenchmark&lt;/strong&gt;.  &lt;strong&gt;mcbenchmark&lt;/strong&gt; is the
+&amp;ldquo;single-threaded&amp;rdquo; test.  It runs a playout, a random game, a specified number
+of times.  These playouts are run sequentially.  &lt;strong&gt;tsbenchmark&lt;/strong&gt; is the
+&amp;ldquo;multi-threaded&amp;rdquo; test.  It essentially generates a move from an empty board, just
+like the first move of the game.  To determine what that move should be, michi-go
+will do a specified number of different playouts and pick the one that has the
+highest likelihood of a win.  Since each playout is independent of any other, the
+work is spread out across multiple workers.&lt;/p&gt;
+
+&lt;p&gt;I know there is some overhead for handling the extra workers and I already knew
+I wasn&amp;rsquo;t saturating the CPU when allowing the program to use parallel threads
+equal to the number of cores (8 in the case of the test system).  I didn&amp;rsquo;t expect
+any significant impact on the &amp;ldquo;single-threaded&amp;rdquo; test, but any change I would
+expect to be beneficial.&lt;/p&gt;
+
+&lt;p&gt;My initial test was to limit the program to 2 processes, so I would be testing
+the same situation as the 2-core Chromebook.  The &lt;strong&gt;tsbenchmark&lt;/strong&gt; test took less
+than twice as long with this limit.  This is a significant improvement in
+efficiency.  This was much more than I was expecting.  What I did not expect was
+the result of the &lt;strong&gt;mcbenchmark&lt;/strong&gt; test.  This test was actually faster when the
+program with the limit in place.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve now completed a more detailed series of tests to see how this change in
+operation develops.  I ran the each test 10 times and reported the mean elapsed
+time.  I repeat this starting with a limit of 1 process and increasing by one
+until I run with 8, the number of physical cores on the system.  Here are the
+results:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Processes&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;mcbenchmark&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;tsbenchmark&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.24&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;29.81&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.25&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;15.61&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.28&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11.95&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.30&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10.47&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9.65&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.28&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9.16&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.73&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.27&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.56&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.27&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.55&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.27&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.61&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;11&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.60&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.26&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.67&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;All values are in seconds and the standard deviation is +/- .01s.&lt;/p&gt;
+
+&lt;p&gt;Over-subscribing the cores clearly did not help and the extra work creating and
+managing the extra workers eventually becomes noticeable.&lt;/p&gt;
+
+&lt;p&gt;One thing that may be causing some of the observed effects is my use of channels
+for communication between parts of the program.  These are first-class objects in
+the Go language and are &lt;em&gt;thread safe&lt;/em&gt;.  This means any critical section in the
+supporting code is protected to ensure that only one thread access that section
+at a time.  This can lead to other threads waiting to enter that section. Some
+of this effect may be mitigated as I spend time trying to make the program more
+efficient and make changes to avoid situations requiring a wait.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Relative Performance</title>
